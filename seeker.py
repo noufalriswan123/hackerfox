@@ -149,16 +149,6 @@ def banner():
         utils.print(f'{B}{BL}{banner_text}{W}\n')
     else:
         utils.print(f'{B}{BL}whitefox{W}\n')
-
-   | |   (_) |      / _|         
-__      _| |__  _| |_ ___| |_ _____  __
-\ \ /\ / / '_ \| | __/ _ \  _/ _ \ \/ /
- \ V  V /| | | | | ||  __/ || (_) >  < 
-  \_/\_/ |_| |_|_|\__\___|_| \___/_/\_\
-                                       
-
-
-
     utils.print(f'{G}[>] {C}Created By   : {W}noufal')
     utils.print(f'{G} |---> {C}Twitter   : {W}{twitter_url}')
     utils.print(f'{G} |---> {C}Community : {W}{comms_url}')
