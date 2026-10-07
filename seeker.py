@@ -137,15 +137,7 @@ def banner():
         twitter_url = json_data['twitter']
         comms_url = json_data['comms']
 
-    art = r"""
-                        __
-  ______  ____   ____  |  | __  ____ _______
- /  ___/_/ __ \_/ __ \ |  |/ /_/ __ \\_  __ \
- \___ \ \  ___/\  ___/ |    < \  ___/ |  | \/
-/____  > \___  >\___  >|__|_ \ \___  >|__|
-     \/      \/     \/      \/     \/"""
-    utils.print(f'{G}{art}{W}\n')
-    utils.print(f'{G}[>] {C}Created By   : {W}thewhiteh4t')
+    utils.print(f'{G}[>] {C}Created By   : {W}noufal')
     utils.print(f'{G} |---> {C}Twitter   : {W}{twitter_url}')
     utils.print(f'{G} |---> {C}Community : {W}{comms_url}')
     utils.print(f'{G}[>] {C}Version      : {W}{VERSION}\n')
