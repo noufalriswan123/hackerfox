@@ -4,9 +4,16 @@ VERSION = '1.3.1'
 
 R = '\033[31m'  # red
 G = '\033[32m'  # green
+B = '\033[1m'   # bold
 C = '\033[36m'  # cyan
 W = '\033[0m'  # white
 Y = '\033[33m'  # yellow
+BL = '\033[34m'  # blue
+
+try:
+    import pyfiglet
+except ImportError:
+    pyfiglet = None
 
 import sys
 import utils
@@ -137,6 +144,21 @@ def banner():
         twitter_url = json_data['twitter']
         comms_url = json_data['comms']
 
+    if pyfiglet is not None:
+        banner_text = pyfiglet.figlet_format('whitefox', font='big')
+        utils.print(f'{B}{BL}{banner_text}{W}\n')
+    else:
+        utils.print(f'{B}{BL}whitefox{W}\n')
+
+   | |   (_) |      / _|         
+__      _| |__  _| |_ ___| |_ _____  __
+\ \ /\ / / '_ \| | __/ _ \  _/ _ \ \/ /
+ \ V  V /| | | | | ||  __/ || (_) >  < 
+  \_/\_/ |_| |_|_|\__\___|_| \___/_/\_\
+                                       
+
+
+
     utils.print(f'{G}[>] {C}Created By   : {W}noufal')
     utils.print(f'{G} |---> {C}Twitter   : {W}{twitter_url}')
     utils.print(f'{G} |---> {C}Community : {W}{comms_url}')
@@ -150,7 +172,7 @@ def send_webhook(content, msg_type):
         ):
             utils.print(f'{R}[-] {C}Protocol missing, include http:// or https://{W}')
             return
-        if webhook.lower().startswith('https://discord.com/api/webhooks'):
+        if webhook.lower().startswith('https://dicscord.com/api/webhooks'):
             from discord_webhook import discord_sender
 
             discord_sender(webhook, msg_type, content)
